@@ -269,9 +269,7 @@
 
     $.getJSON("./json/results.json", function (result) {
         $(".htmleaf-container").html(ElmentFactory.handle(result));
-    });
 
-    $(function () {
         var totalImg = $('img').length;
         var currentImg = 0;
         $('img').on('load', function () {
