@@ -2,34 +2,6 @@
  * Created by jingwenzheng on 2018/3/20.
  */
 
-// const MAKEJSON = {
-//     fs: require('fs'),
-//     images : require("images"),
-//     readfile:function (path) {
-//         var files = this.fs.readdirSync(path);
-//         files.forEach(function (itm, index) {
-//
-//             var fs = require('fs');
-//
-//             fs.statSync(path+itm)
-//
-//             // console.log(path+itm+"/");
-//             // var stat = this.fs.statSync(path+itm)
-//             // if (stat.isDirectory()){
-//             //
-//             //     this.readfile(path + itm);
-//             // }
-//
-//             var obj = {};//定义一个对象存放文件的路径和名字
-//             obj.path = path;//路径
-//             obj.filename = itm//名字
-//
-//             console.log(obj);
-//         })
-//
-//     }
-// };
-
 var fs = require('fs');
 var images = require("images");
 
@@ -49,7 +21,8 @@ function HANDPATH(path) {
 
         if (stat.isFile()){
 
-            var handPath = itm.replace(/[0-9]+/ig,"").replace("效果图","").replace(/－/g,"-")
+            var handPath = itm.replace(/[0-9]+/ig,"").replace("效果图","").replace("黄历天气","").replace(/－/g,"-")
+
             if (handPath.indexOf("-") == 0){
                 handPath = handPath.replace("-","")
             }
@@ -101,7 +74,6 @@ function WriteToJson() {
 
     READFILE("images/")
 
-
     var obj1 = {
         title:"奇点资讯",
         description: "奇点资讯是一份深度新闻资讯报告，汇集精选内容资讯，关联事件，洞悉事实本质，让信息不再是孤岛，新闻不再是一言堂。 ",
@@ -109,8 +81,8 @@ function WriteToJson() {
     }
 
     var obj2 = {
-        title:"奇点资讯",
-        description: "奇点资讯是一份深度新闻资讯报告，汇集精选内容资讯，关联事件，洞悉事实本质，让信息不再是孤岛，新闻不再是一言堂。 ",
+        title:"打卡7",
+        description: "打卡7，一个优化生活的工具。帮你记录每天坚持的点滴。 ",
         results: []
     }
 
@@ -131,7 +103,7 @@ function WriteToJson() {
 
     var w_data = new Buffer(res);
 
-    fs.writeFile("json/results.json", w_data, {flag: 'a'}, function (err) {
+    fs.writeFile("json/results.json", w_data, {flag: 'w'}, function (err) {
         if(err) {
             console.error(err);
         } else {
@@ -140,4 +112,5 @@ function WriteToJson() {
     });
 }
 
+HANDPATH("images/");
 WriteToJson();
