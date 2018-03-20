@@ -86,6 +86,12 @@ function WriteToJson() {
         results: []
     }
 
+    var obj3 = {
+        title:"白猫贷",
+        description: "白猫贷是依托于大数据等技术手段,实现借贷服务全流程线上完成的金融平台,主要服务于有较大额资金需求的人群。该产品，主要用于早期的贷款超市",
+        results: []
+    }
+
     content.forEach(function (value) {
 
         if (value.url.indexOf(obj1.title) != -1){
@@ -97,9 +103,14 @@ function WriteToJson() {
 
             obj2.results.push(value)
         }
+
+        if (value.url.indexOf(obj3.title) != -1){
+
+            obj3.results.push(value)
+        }
     })
 
-    const res = JSON.stringify([obj1,obj2])
+    const res = JSON.stringify([obj1,obj3,obj2])
 
     var w_data = new Buffer(res);
 
