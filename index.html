@@ -14,6 +14,7 @@
 </div>
 
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="js/divresize.js"></script>
 <script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
 <script type="text/javascript" src="js/baguetteBox.min.js"></script>
 <script type="text/javascript">
@@ -41,7 +42,7 @@
         intertemp: "<div class=\"col-sm-6 col-md-4\">\n" +
         "\t\t\t\t\t\t<div class=\"thumbnail\">\n" +
         "\t\t\t\t\t\t\t<a class=\"lightbox\" href=\"{0}\">\n" +
-        "\t\t\t\t\t\t\t\t<img src=\"{0}\" style=\"width: {3}px;height: {4}px;\" alt=\"Traffic\">\n" +
+        "\t\t\t\t\t\t\t\t<img src=\"{0}\" datawidth=\"{3}\" dataheight=\"{4}\" alt=\"Traffic\">\n" +
         "\t\t\t\t\t\t\t</a>\n" +
         "\t\t\t\t\t\t\t<div class=\"caption\">\n" +
         "\t\t\t\t\t\t\t\t<h3>{1}</h3>\n" +
@@ -70,13 +71,37 @@
                             )
                         }).join(""));
             }).join("");
+        },
+        resize: function () {
+
+            $(".thumbnail").each(function () {
+
+                const divWidth = $(this).width();
+
+                const img = $(this).find("img");
+
+                $(img).height($(img).attr("dataheight")/($(img).attr("datawidth")/divWidth));
+            });
         }
     }
 
 
     $.getJSON("./json/results.json", function (result) {
+
         $(".htmleaf-container").html(ElmentFactory.handle(result));
+
+        $(".thumbnail").each(function () {
+
+            ElmentFactory.resize()
+        });
+
+        $(".thumbnail:eq(0)").resize(function () {
+
+            ElmentFactory.resize()
+        });
+
         $(".row").masonry();
+
         baguetteBox.run('.gallery-container');
     });
 
