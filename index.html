@@ -8,204 +8,10 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/baguetteBox.min.css">
     <link rel="stylesheet" href="css/thumbnail-gallery.css">
-    <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
-    <link rel="stylesheet" type="text/css" href="css/default.css">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/Icomoon/style.css" rel="stylesheet" type="text/css"/>
-    <style>
-        .jq22-demo a {
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-    </style>
-    <style>
-        #loading {
-            background-color: #2c3e50;
-            height: 100%;
-            width: 100%;
-            position: fixed;
-            z-index: 1;
-            margin-top: 0px;
-            top: 0px;
-        }
-
-        #loading-center {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-
-        #loading-center-absolute {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            height: 50px;
-            width: 50px;
-            margin-top: -25px;
-            margin-left: -25px;
-            -ms-transform: rotate(45deg);
-            -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
-            -webkit-animation: loading-center-absolute 1.5s infinite;
-            animation: loading-center-absolute 1.5s infinite;
-
-        }
-
-        #loading-center-absolute2 {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            height: 50px;
-            width: 200px;
-            margin-top: 100px;
-            margin-left: -100px;
-            color:white;
-            text-align: center;
-        }
-
-        .object {
-            width: 25px;
-            height: 25px;
-            background-color: #FFF;
-            float: left;
-
-        }
-
-        #object_one {
-            -webkit-animation: object_one 1.5s infinite;
-            animation: object_one 1.5s infinite;
-        }
-
-        #object_two {
-            -webkit-animation: object_two 1.5s infinite;
-            animation: object_two 1.5s infinite;
-        }
-
-        #object_three {
-            -webkit-animation: object_three 1.5s infinite;
-            animation: object_three 1.5s infinite;
-        }
-
-        #object_four {
-            -webkit-animation: object_four 1.5s infinite;
-            animation: object_four 1.5s infinite;
-        }
-
-        @-webkit-keyframes loading-center-absolute {
-            100% {
-                -webkit-transform: rotate(-45deg);
-            }
-
-        }
-
-        @keyframes loading-center-absolute {
-            100% {
-                transform: rotate(-45deg);
-                -webkit-transform: rotate(-45deg);
-            }
-        }
-
-        @-webkit-keyframes object_one {
-            25% {
-                -webkit-transform: translate(0, -50px) rotate(-180deg);
-            }
-            100% {
-                -webkit-transform: translate(0, 0) rotate(-180deg);
-            }
-
-        }
-
-        @keyframes object_one {
-            25% {
-                transform: translate(0, -50px) rotate(-180deg);
-                -webkit-transform: translate(0, -50px) rotate(-180deg);
-            }
-            100% {
-                transform: translate(0, 0) rotate(-180deg);
-                -webkit-transform: translate(0, 0) rotate(-180deg);
-            }
-        }
-
-        @-webkit-keyframes object_two {
-            25% {
-                -webkit-transform: translate(50px, 0) rotate(-180deg);
-            }
-            100% {
-                -webkit-transform: translate(0, 0) rotate(-180deg);
-            }
-        }
-
-        @keyframes object_two {
-            25% {
-                transform: translate(50px, 0) rotate(-180deg);
-                -webkit-transform: translate(50px, 0) rotate(-180deg);
-            }
-            100% {
-                transform: translate(0, 0) rotate(-180deg);
-                -webkit-transform: translate(0, 0) rotate(-180deg);
-            }
-        }
-
-        @-webkit-keyframes object_three {
-            25% {
-                -webkit-transform: translate(-50px, 0) rotate(-180deg);
-            }
-            100% {
-                -webkit-transform: translate(0, 0) rotate(-180deg);
-            }
-        }
-
-        @keyframes object_three {
-            25% {
-                transform: translate(-50px, 0) rotate(-180deg);
-                -webkit-transform: translate(-50px, 0) rotate(-180deg);
-            }
-            100% {
-                transform: translate(0, 0) rotate(-180deg);
-                -webkit-transform: rtranslate(0, 0) rotate(-180deg);
-            }
-        }
-
-        @-webkit-keyframes object_four {
-            25% {
-                -webkit-transform: translate(0, 50px) rotate(-180deg);
-            }
-            100% {
-                -webkit-transform: translate(0, 0) rotate(-180deg);
-            }
-        }
-
-        @keyframes object_four {
-            25% {
-                transform: translate(0, 50px) rotate(-180deg);
-                -webkit-transform: translate(0, 50px) rotate(-180deg);
-            }
-            100% {
-                transform: translate(0, 0) rotate(-180deg);
-                -webkit-transform: translate(0, 0) rotate(-180deg);
-            }
-        }
-    </style>
 </head>
 <body>
-<div id="loading">
-    <div id="loading-center">
-        <div id="loading-center-absolute">
-            <div class="object" id="object_one"></div>
-            <div class="object" id="object_two"></div>
-            <div class="object" id="object_three"></div>
-            <div class="object" id="object_four"></div>
-        </div>
-        <div id="loading-center-absolute2">
-            <p> </p>
-            <br/>
-            <p style="font-size: 14px">不等 我现在就要看</p>
-        </div>
-    </div>
-</div>
 <div class="htmleaf-container">
 </div>
-
 
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
@@ -235,7 +41,7 @@
         intertemp: "<div class=\"col-sm-6 col-md-4\">\n" +
         "\t\t\t\t\t\t<div class=\"thumbnail\">\n" +
         "\t\t\t\t\t\t\t<a class=\"lightbox\" href=\"{0}\">\n" +
-        "\t\t\t\t\t\t\t\t<img src=\"{0}\" alt=\"Traffic\">\n" +
+        "\t\t\t\t\t\t\t\t<img src=\"{0}\" style=\"width: {3}px;height: {4}px;\" alt=\"Traffic\">\n" +
         "\t\t\t\t\t\t\t</a>\n" +
         "\t\t\t\t\t\t\t<div class=\"caption\">\n" +
         "\t\t\t\t\t\t\t\t<h3>{1}</h3>\n" +
@@ -243,8 +49,8 @@
         "\t\t\t\t\t\t\t</div>\n" +
         "\t\t\t\t\t\t</div>\n" +
         "\t\t\t\t\t</div>",
-        inter: function (src, title, desc) {
-            return this.intertemp.format(src, title, desc);
+        inter: function (src, title, desc,width,height) {
+            return this.intertemp.format(src, title, desc,width,height);
         },
         outer: function (title, desc, content) {
             return this.outertemp.format(title, desc, content);
@@ -252,14 +58,17 @@
         handle: function (result) {
             return result.map(function (value) {
                 return ElmentFactory.outer(
-                    value.title,
-                    value.description,
-                    value.results.map(function (value2) {
-                        return ElmentFactory.inter(
-                            value2.url,
-                            value2.title,
-                            value2.description)
-                    }).join(""));
+                        value.title,
+                        value.description,
+                        value.results.map(function (value2) {
+                            return ElmentFactory.inter(
+                                    value2.url,
+                                    value2.title,
+                                    value2.description,
+                                    value2.width,
+                                    value2.height
+                            )
+                        }).join(""));
             }).join("");
         }
     }
@@ -267,22 +76,8 @@
 
     $.getJSON("./json/results.json", function (result) {
         $(".htmleaf-container").html(ElmentFactory.handle(result));
-
-        var totalImg = $('img').length;
-        var currentImg = 0;
-        $('img').on('load', function () {
-            currentImg++;
-
-            $("#loading-center-absolute2 p:eq(0)").text("正在加载资源中 "+parseFloat(currentImg/totalImg*100).toFixed(2) + '%');
-            if (currentImg === totalImg) {
-                $("#loading").fadeOut(500);
-                $(".row").masonry();
-            }
-        })
-
-        $("#loading-center-absolute2 p:eq(1)").on("click",function () {
-            $("#loading").fadeOut(500);
-        });
+        $(".row").masonry();
+        baguetteBox.run('.gallery-container');
     });
 
 </script>
